@@ -11,6 +11,7 @@ var ProviderEngine = require('web3-provider-engine')
 var Web3Subprovider = require('web3-provider-engine/subproviders/web3.js')
 var WalletSubprovider = require('ethereumjs-wallet/provider-engine')
 var Web3 = require('web3');
+var _ = require('underscore');
 
 require('events').EventEmitter.defaultMaxListeners = 100;
 
@@ -76,7 +77,7 @@ var depositInterface = [
 var depositContractAddress = '0xCD6608b1291d4307652592c29bFF7d51f1AD83d7';
 
 var erc20Interface = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"name","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"totalSupply","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"decimals","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"symbol","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"}];
-var tokenList = require("./js/tokens.json");
+var tokens = _.indexBy(require("./js/tokens.json"), 'address');
 
 function buildRedemptionForm(web3, wallet) {
     var accounts = web3.eth.accounts;
@@ -93,7 +94,7 @@ function buildRedemptionForm(web3, wallet) {
     var deposit = Promise.promisifyAll(depositContract.at(depositContractAddress));
 
     var tokenContract = web3.eth.contract(erc20Interface);
-    var tokens = tokenList.map(function(token) {
+    var tokenInterfaces = _.mapObject(tokens, function(token) {
         return Promise.promisifyAll(tokenContract.at(token.address));
     });
 
@@ -101,19 +102,21 @@ function buildRedemptionForm(web3, wallet) {
     Promise.all([
         deposit.checkAsync(address),
         web3.eth.getBalanceAsync(address),
-    ].concat(tokens.map(function(token) { return token.balanceOfAsync(address); }))
-    ).then(function(results) {
+        Promise.props(_.mapObject(tokenInterfaces, function(token) {
+            return token.balanceOfAsync(address);
+        }))
+    ]).then(function(results) {
         var depositExpires = new Date(results[0][0].toNumber() * 1000);
         var depositValue = web3.fromWei(results[0][1]).toNumber();
 
         var etherBalance = results[1];
-        var tokenBalances = results.slice(2);
+        var tokenBalances = results[2];
 
         var balances = [];
-        for(var i = 0; i < tokenBalances.length; i++) {
-            if(tokenBalances[i] == 0) continue;
-            balances.push({type: i, typename: tokenList[i].symbol, balance: tokenBalances[i] / Math.pow(10, tokenList[i].decimal)});
-        }
+        _.each(_.keys(tokenBalances), function(addr) {
+            if(tokenBalances[addr] == 0) return;
+            balances.push({type: addr, typename: tokens[addr].symbol, balance: tokenBalances[addr] / Math.pow(10, tokens[addr].decimal)});
+        });
 
         var targets = [];
         for(var i = 0; i < accounts.length; i++) {
@@ -165,17 +168,16 @@ function buildRedemptionForm(web3, wallet) {
         $("#sweepbutton").click(function() {
             if($("#sweepbutton").attr("disabled") == "disabled") return;
 
-            var balanceType = $(".balanceradio:checked").val();
+            var tokenAddr = $(".balanceradio:checked").val();
             var sent;
             getAddr().then(function(addr) {
                 sent = web3.eth.getGasPriceAsync().then(function(gasPrice) {
-                    if(balanceType == "ether") {
+                    if(tokenAddr == "ether") {
                         var value = etherBalance.sub(gasPrice.times(23300));
                         return web3.eth.sendTransactionAsync({from: wallet.getAddressString(), to: addr, gasPrice: gasPrice, gas: 23300, value: value});
                     } else {
-                        var tokenIdx = parseInt(balanceType);
-                        var token = Promise.promisifyAll(tokenContract.at(tokenList[tokenIdx].address));
-                        var tokenBalance = tokenBalances[tokenIdx].toString();
+                        var token = Promise.promisifyAll(tokenContract.at(tokenAddr));
+                        var tokenBalance = tokenBalances[tokenAddr].toString();
                         return Promise.promisify(token.transfer.estimateGas)(addr, tokenBalance).then(function(gasLimit) {
                             return token.transferAsync(addr, tokenBalance, {from: wallet.getAddressString(), gasPrice: gasPrice, gasLimit: gasLimit});
                         });
