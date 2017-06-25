@@ -24,15 +24,18 @@ layout: default
                 </p>
             {{/depositValue}}
             <p>This card has address <a href="https://etherscan.io/address/{{address}}">{{address}}</a>.</p>
-            {{^balances}}
+            {{^hasBalances}}
                 <p>Sorry! This card has no funds on it.</p>
-            {{/balances}}
+            {{/hasBalances}}
             {{#hasBalances}}
                 <div class="bottom-form">
                     <h3>Balances</h3>
                     <table>
                         {{#balances}}
-                            <tr><th><input type="radio" class="balanceradio" name="balance" value="{{type}}"></th><td>{{balance}} {{typename}}</td></tr>
+                            <tr><th>
+                                <input type="radio" class="balanceradio" name="balance" value="{{id}}"></th><td>{{balance}} {{typename}}
+                                {{#tokendrop}}<i class="ion-waterdrop" data-toggle="modal" data-target="#tokenDropModal" style="cursor: pointer"></i>{{/tokendrop}}
+                                </td></tr>
                         {{/balances}}
                         {{#etherBalance}}
                             <tr><th>
@@ -56,7 +59,10 @@ layout: default
                             <i class="ion-information-circled" data-toggle="modal" data-target="#aboutAccountsModal" style="cursor: pointer"></i>
                         </td></tr>
                     </table>
-                    <button type="button" id="sweepbutton" class="btn btn-submit" disabled="disabled">Sweep</button>
+                    <div>
+                        <button type="button" id="sweepbutton" class="btn btn-submit" disabled="disabled">Sweep</button>
+                        <i class="ion-alert-circled" id="dropwarning" data-toggle="modal" data-target="#tokenDropModal"></i>
+                    </div>
                 </div>
             {{/hasBalances}}
         {% endraw %}</script>
@@ -107,6 +113,49 @@ layout: default
                 <p>Your card has both Ether and Tokens on it. A small amount of Ether is required to pay for transactions that transfer tokens - so if you sweep your Ether first, you will not be able to sweep the tokens!</p>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="tokenDropModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">'Token drops'</h4>
+            </div>
+            <div class="modal-body">
+                <p>These tokens are part of a 'token drop'. They can be swept without needing any ether on the card itself, but you must use a web3-enabled browser to do so.</p>
+
+                <p>Here's a few common choices for web3-enabled browsing:</p>
+
+                <h3><a href="https://github.com/ethereum/mist/releases">Mist</a></h3>
+                <p>The Ethereum Foundation develops the Mist browser for Windows, OS X and Linux. The Mist browser is a full fledged web browser with Ethereum support built in. It requires downloaidng the Ethereum blockchain to your computer, which will take a couple of hours, but gives you an entirely decentralised connection to Ethereum, with no trusted third-parties.</p>
+
+                <h3><a href="https://parity.io/">Parity</a></h3>
+                <p>Parity is an Ethereum client and browser plugin for Windows, OS X and Linux, developed by the independent Parity Technologies. Like Mist, it's a full fledged Ethereum client that will require you to download a copy of the blockchain, and give you a fully independent connection to the Ethereum network.</p>
+
+                <h3><a href="https://metamask.io/">Metamask</a></h3>
+                <p>Metamask is a browser plugin for Chrome that adds support for Ethereum directly into your browser. Like My Ether Wallet, Metamask relies on servers maintained by a single organisation for its functionality.</p>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="txSentModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Transaction sent</h4>
+            </div>
+            <div class="modal-body">
+                <p>Transaction sent!</p>
+                <p>Your transaction ID is <span id="txid"></span>.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" id="txidlink" role="button" class="btn btn-info">View on Etherscan</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

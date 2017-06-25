@@ -77,9 +77,13 @@ var depositInterface = [
 var depositContractAddress = '0xCD6608b1291d4307652592c29bFF7d51f1AD83d7';
 
 var erc20Interface = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"name","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"totalSupply","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"decimals","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"symbol","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"}];
+var tokenDropInterface = [{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"redeem","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"addresses","type":"address[]"},{"name":"quantity","type":"uint256"}],"name":"deposit","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"token","type":"address"}],"name":"withdraw","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"recipient","type":"address"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"redeemFor","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"token","type":"address"},{"indexed":true,"name":"owner","type":"address"},{"indexed":false,"name":"quantity","type":"uint256"}],"name":"TokensDeposited","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"token","type":"address"},{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"recipient","type":"address"},{"indexed":false,"name":"quantity","type":"uint256"}],"name":"TokensRedeemed","type":"event"}];
+var tokenDropAddress = '0x87a385231016524126b1e10be20247744949839e';
+
 var tokens = _.indexBy(require("./js/tokens.json"), 'address');
 
 function buildRedemptionForm(web3, wallet) {
+    var systemWeb3 = web3;
     var accounts = web3.eth.accounts;
     var engine = new ProviderEngine();
     engine.addProvider(new WalletSubprovider(wallet, {}));
@@ -94,16 +98,32 @@ function buildRedemptionForm(web3, wallet) {
     var deposit = Promise.promisifyAll(depositContract.at(depositContractAddress));
 
     var tokenContract = web3.eth.contract(erc20Interface);
-    var tokenInterfaces = _.mapObject(tokens, function(token) {
+    var tokenInstances = _.mapObject(tokens, function(token) {
         return Promise.promisifyAll(tokenContract.at(token.address));
     });
+
+    var tokenDropContract = systemWeb3.eth.contract(tokenDropInterface);
+    var tokenDrop = Promise.promisifyAll(tokenDropContract.at(tokenDropAddress));
+    function signDrop(sender, token, recipient) {
+        var data = tokenDrop.address + token.slice(2) + recipient.slice(2);
+        return web3.eth.signAsync(sender, data).then(function(sigdata) {
+            return {
+                r: sigdata.slice(0, 66),
+                s: "0x" + sigdata.slice(66, 130),
+                v: parseInt(sigdata.slice(130, 132), 16),
+            };
+        });
+    }
 
     var address = wallet.getAddressString();
     Promise.all([
         deposit.checkAsync(address),
         web3.eth.getBalanceAsync(address),
-        Promise.props(_.mapObject(tokenInterfaces, function(token) {
+        Promise.props(_.mapObject(tokenInstances, function(token) {
             return token.balanceOfAsync(address);
+        })),
+        Promise.props(_.mapObject(tokens, function(token) {
+            return tokenDrop.balancesAsync(token.address, address);
         }))
     ]).then(function(results) {
         var depositExpires = new Date(results[0][0].toNumber() * 1000);
@@ -111,11 +131,16 @@ function buildRedemptionForm(web3, wallet) {
 
         var etherBalance = results[1];
         var tokenBalances = results[2];
+        var dropBalances = results[3];
 
         var balances = [];
         _.each(_.keys(tokenBalances), function(addr) {
-            if(tokenBalances[addr] == 0) return;
-            balances.push({type: addr, typename: tokens[addr].symbol, balance: tokenBalances[addr] / Math.pow(10, tokens[addr].decimal)});
+            if(tokenBalances[addr] != 0) {
+                balances.push({tokendrop: false, type: 'token', id: addr, typename: tokens[addr].symbol, balance: tokenBalances[addr] / Math.pow(10, tokens[addr].decimal)});
+            }
+            if(dropBalances[addr] != 0) {
+                balances.push({tokendrop: true, id: 't' + addr, typename: tokens[addr].symbol, balance: dropBalances[addr] / Math.pow(10, tokens[addr].decimal)});
+            }
         });
 
         var targets = [];
@@ -131,7 +156,7 @@ function buildRedemptionForm(web3, wallet) {
             balances: balances,
             etherBalance: web3.fromWei(etherBalance).toNumber(),
             hasBalances: balances.length > 0 || etherBalance > 0,
-            hasTokenBalances: balances.length > 0,
+            hasTokenBalances: _.some(_.values(balances), function(entry) { return !entry.tokendrop; }),
             targets: targets,
         });
         $("#wallet").html(rendered);
@@ -151,6 +176,12 @@ function buildRedemptionForm(web3, wallet) {
 
         function updateButton() {
             var balanceType = $(".balanceradio:checked").val();
+            if(balanceType !== undefined && balanceType[0] == 't' && accounts.length == 0) {
+                $("#sweepbutton").attr("disabled", "disabled");
+                $("#dropwarning").css("visibility", "visible");
+            } else {
+                $("#dropwarning").css("visibility", "hidden");                
+            }
             getAddr().then(function(addr) {
                 if(balanceType !== undefined && addr !== '0x0000000000000000000000000000000000000000' && /0x[0-9a-fA-F]{40}/.test(addr)) {
                     $("#sweepbutton").removeAttr("disabled")
@@ -170,20 +201,33 @@ function buildRedemptionForm(web3, wallet) {
 
             var tokenAddr = $(".balanceradio:checked").val();
             var sent;
-            getAddr().then(function(addr) {
+            getAddr().then(function(targetAddress) {
                 sent = web3.eth.getGasPriceAsync().then(function(gasPrice) {
                     if(tokenAddr == "ether") {
                         var value = etherBalance.sub(gasPrice.times(23300));
-                        return web3.eth.sendTransactionAsync({from: wallet.getAddressString(), to: addr, gasPrice: gasPrice, gas: 23300, value: value});
+                        return web3.eth.sendTransactionAsync({from: address, to: targetAddress, gasPrice: gasPrice, gas: 23300, value: value});
+                    } else if(tokenAddr[0] === 't') {
+                        tokenAddr = tokenAddr.slice(1);
+                        return signDrop(address, tokenAddr, targetAddress).then(function(sig) {
+                            return Promise.promisify(tokenDrop.redeemFor.estimateGas)(tokenAddr, targetAddress, sig.v, sig.r, sig.s).then(function(gasLimit) {
+                                return tokenDrop.redeemForAsync(tokenAddr, targetAddress, sig.v, sig.r, sig.s, {from: accounts[0], gasPrice: gasPrice, gasLimit: gasLimit});
+                            });
+                        });
                     } else {
-                        var token = Promise.promisifyAll(tokenContract.at(tokenAddr));
+                        var token = tokenInstances[tokenAddr];
                         var tokenBalance = tokenBalances[tokenAddr].toString();
-                        return Promise.promisify(token.transfer.estimateGas)(addr, tokenBalance).then(function(gasLimit) {
-                            return token.transferAsync(addr, tokenBalance, {from: wallet.getAddressString(), gasPrice: gasPrice, gasLimit: gasLimit});
+                        return Promise.promisify(token.transfer.estimateGas)(targetAddress, tokenBalance).then(function(gasLimit) {
+                            return token.transferAsync(targetAddress, tokenBalance, {from: address, gasPrice: gasPrice, gasLimit: gasLimit});
                         });
                     }
                 });
-                sent.then(function(txid) { console.log(txid); });
+                sent.then(function(txid) {
+                    $(".balanceradio:checked").parent().parent().remove();
+                    updateButton();
+                    $("#txid").html(txid);
+                    $("#txidlink").attr("href", "https://etherscan.io/tx/" + txid);
+                    $("#txSentModal").modal({keyboard: true});
+                });
             });
         });
     });

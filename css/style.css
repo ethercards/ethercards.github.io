@@ -587,7 +587,6 @@ Media Queries
 }
 
 
-/*-- Redeem Page Style (Sorry Nick, I didn't know where else to put them) --*/
 #redeem input[type="radio"], #redeem input[type="checkbox"]{margin: 0; margin-right: 7px;}
 #redeem input{margin-bottom: 15px; margin-top: 9px;}
 #redeem h3{line-height: 38px; margin-bottom: 0; margin-top: 15px;}
@@ -596,4 +595,5 @@ Media Queries
 #redeem #targetinput {min-width: 500px; border-color: #17b1d4; padding: 5px;}
 #redeem b{color: green;}
 #redeem #wallet a{font-weight: 600; font-size: 1.2em; text-decoration: underline;}
-#redeem #sweepbutton{margin-top: 10px; min-width: 200px; min-height: 30px; height: 48px; padding: 0; font-size: 1.3em; font-weight: 600; letter-spacing: 2px; border-radius: 3px; transition-delay: 125ms; transition-duration: 1000ms;}
+#redeem #sweepbutton{margin-top: 10px; min-width: 200px; min-height: 30px; height: 48px; padding: 0; font-size: 1.3em; font-weight: 600; letter-spacing: 2px; border-radius: 3px; transition-delay: 125ms; transition-duration: 1000ms; vertical-align: bottom;}
+#redeem #dropwarning{cursor: pointer; font-size: 48px; visibility: hidden}
