@@ -284,7 +284,7 @@ Logo
 ======================================================.==================== */ 
 .navbar-inverse .navbar-brand  {color: #FFF; font-family: "Montserrat"; font-size: 30px; margin-top: 15px; padding: 0; letter-spacing: 0.05px;}
 .scroll-fixed-navbar.navbar-inverse .navbar-brand {color: #FFF;}
-.text-logo i {margin-right: 10px; font-size: 30px;}
+.text-logo img {margin-right: 10px; height: 32px; display: inline; vertical-align: middle;}
 
 /* ==========================================================================
 Banner
