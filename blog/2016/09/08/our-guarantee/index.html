@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<title>Our guarantee &#8211; ether.cards</title>
+    <meta name="description" content="Ether, crystallized.">
+    <meta name="author" content="Arachnid Labs">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="https://ether.cards/blog/2016/09/08/our-guarantee/">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+
+	<link href="/img/favicon.png" rel="icon">
+
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/ionicons.css" rel="stylesheet">	
+	<link href="/css/style.css" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,300,200,600,600italic,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic">
+
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.js"></script>
+		<script src="/js/respond.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	
+	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>	<script type="text/javascript">window.jQuery || document.write('<script src="/js/jquery-2.1.0.min.js"><\/script>')</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-84449-11', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+<body data-spy="scroll" data-target=".navigation">	
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand text-logo" href="#"><img src="/img/logo.png"> ETHER CARDS</a>
+				</div>
+			<div class="navigation navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/#top-banner">Home</a></li>
+					<li><a href="/#intro">Intro</a></li>
+					<li><a href="/#pricing">Buy now</a></li>
+					<li><a href="/#verify">Verify</a></li>
+					<li><a href="/#redeeming">Redeeming</a></li>
+					<li><a href="/#faq">FAQ</a></li>
+					<li><a href="/blog/">Blog</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	
+
+
+<section id="post" class="section padding-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 title">
+                <h1>Our guarantee</h1>
+                <span class="post-meta">Sep 8, 2016</span><br>
+                
+                <span class="post-meta small">2 minute read</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="text-justify">
+                    <p>Every Ether Card produced comes with this guarantee:</p>
+
+<blockquote>
+  <p>If you can present an Ether Card with untouched scratch panel, but whose account has an outgoing transaction, or a card whose private key is incorrect or unreadable through no fault of your own, we will refund the lost funds, up to a total value of 5 ether, from our guarantee account. This guarantee is valid for one year from the date of manufacture of each card.</p>
+</blockquote>
+
+<p>That means that if someone else somehow spends your funds before you scratch off the private key, or you scratch it off and find the key is unusable (for example, due to a printing error), we will refund any losses up to a maximum of 5 ether.</p>
+
+<p>If you’ve already scratched the panel, we can’t refund you for any unexpected withdrawals, because there’s no way to verify how the transaction happened. Likewise, if you use sandpaper on your private key, feed it through a shredder, drag it behind a car, or give it to your dog, we can’t be held responsible for any losses due to the key becoming illegible.</p>
+
+<p>The <a href="http://etherscan.io/address/0xcd6608b1291d4307652592c29bff7d51f1ad83d7">guarantee account</a> is funded by a deposit of 0.1 ether on every card printed. It’s implemented as a smart contract, whose verified source can be <a href="http://etherscan.io/address/0xcd6608b1291d4307652592c29bff7d51f1ad83d7#code">seen here</a>, which has several useful features:</p>
+
+<ul>
+  <li>You can verify that a deposit was paid for your card by providing its address to the contract (or use <a href="/#verify">our verification tool</a>), meaning you know we put down a deposit for every card we print.</li>
+  <li>Once deposited, funds can’t be withdrawn by us until the guarantee expires, a year later.</li>
+  <li>The auditor account can pay out claims from the guarantee account. If a payout is made, that fact is recorded in the contract so you can see that for yourself.</li>
+  <li>Any claims are paid from the oldest deposits - meaning that we can’t withdraw funds until the account has been made whole again.</li>
+</ul>
+
+<p>Currently, we hold the position of both owner and auditor; as ether.cards grows and matures, we expect to find trustworthy individuals to appoint as independent auditors.</p>
+
+<p>We think that the contract provides a good way to reduce the level of trust you have to place in us, both by providing compensation, and providing concrete proof of our good behaviour, and we hope you agree.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+	<section class="footer footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<h3>Ether Cards</h3>
+					<p>Ether Cards is a project of <a href="mailto:nick@arachnidlabs.com">Nick Johnson</a> and <a href="http://www.arachnidlabs.com/">Arachnid Labs</a>.</p>
+				</div>
+				<div class="col-md-2 col-sm-3 col-xs-6">
+					<h3>Social</h3>
+					<ul class="quick-links">
+						<li><a href="https://twitter.com/ether_cards">Twitter</a></li>
+						<li><a href="mailto:cards@arachnidlabs.com">Email</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-3 col-xs-6">
+					<h3>More</h3>
+					<ul class="quick-links">
+						<li><a href="https://github.com/ethercards/ethercards.github.io/">Site Source</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer footer-sub">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<p>&copy; 2016 Arachnid Labs Ltd. All Right Reserved</p>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<p class="copyright">Theme made with <i class="ion-heart"></i> by <a href="http://www.simplesphere.net"> Simplesphere</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<a href="#" class="scroll-up"><i class="ion-android-arrow-up"></i></a>
+	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/modernizr.min.js" type="text/javascript"></script>
+	<script src="/js/custom.js?at=20170408" type="text/javascript"></script>
+</body>
+</html>
