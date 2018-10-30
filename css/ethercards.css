@@ -1,0 +1,14 @@
+.pricing-table img {
+    display:block;
+    max-width: 289px;
+    margin:0 auto;
+    width:100%;
+}
+
+
+@media (max-width: 1200px) {
+    .pricing-table .price {
+        font-size: 44px;
+
+    } 
+}
