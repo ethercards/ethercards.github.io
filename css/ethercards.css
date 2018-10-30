@@ -5,6 +5,15 @@
     width:100%;
 }
 
+div.icons {
+    height: 86px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+}
+div.icons img {
+    height: 100%;
+}
 
 @media (max-width: 1200px) {
     .pricing-table .price {
