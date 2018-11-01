@@ -160,7 +160,10 @@ Backgrounds
 .stripe {background-image:url(../img/stripe.png);}
 .cartographer {background-image:url(../img/cartographer.png);}
 
+/* 
+  !!! header image attached to the body in ethercards.css !!!
 .bg-banner {background: url(../img/finaltoucanheader.jpg) no-repeat center bottom; background-size: cover;  background-attachment: fixed;}
+ */
 
 /* ==========================================================================
 Gallery
