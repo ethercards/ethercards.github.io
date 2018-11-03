@@ -1,3 +1,9 @@
+.mt-50 {
+    margin-top: 50px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
 
 body:after{
     content:"";
@@ -12,6 +18,21 @@ body:after{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+body {
+    font-size: 18px;
+}
+
+body, .title p {
+    color: #000;
+}
+
+.title p {
+    font-style: normal;
+}
+
+.cols-with-icons h3{
+    margin-bottom: 0;
 }
 
 .pricing-table img {
@@ -34,6 +55,9 @@ div.icons img {
 @media (max-width: 1200px) {
     .pricing-table .price {
         font-size: 44px;
-
     } 
+
+    h3 {
+        font-size: 20px;
+    }
 }

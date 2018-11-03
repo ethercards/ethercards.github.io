@@ -22,9 +22,11 @@
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/ethercards.css" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<!-- 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,300,200,600,600italic,700">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
 	<!--[if lt IE 9]>
 		<script src="/js/html5shiv.js"></script>
@@ -93,35 +95,38 @@
 				<p>Ether cards are 'physical ether'. They're a quick and convenient way to give ether, tokens, or other blockchain assets to friends and family, and a great way to introduce people to the power of the Ethereum blockchain.</p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-4 text-center">
-				<!-- <i class="font-icon ion-email"></i> -->
-				<div class="icons">
-					<img src="/img/icon-01.png" alt="">
+		<div class="row cols-with-icons">
+			<div class="col-md-12" >
+				<div class="col-md-4 text-center">
+					<!-- <i class="font-icon ion-email"></i> -->
+					<div class="icons">
+						<img src="/img/icon-01.png" alt="">
+					</div>
+					<h3>Get your Ether Cards</h3>
+					<p>Buy them <a href="#pricing">here</a> with free shipping.</p>
 				</div>
-				<h4>Get your Ether Cards</h4>
-				<p>Buy them <a href="#pricing">here</a> with free shipping.</p>
-			</div>
-			<div class="col-md-4 text-center">
-				<!-- <i class="font-icon ion-card"></i> -->
-				<div class="icons">
-					<img src="/img/icon-02.png" alt="">
+				<div class="col-md-4 text-center">
+					<!-- <i class="font-icon ion-card"></i> -->
+					<div class="icons">
+						<img src="/img/icon-02.png" alt="">
+					</div>
+					<h3>Load a card with tokens or Ether</h3>
+					<p>Load an Ether Card from any wallet that supports scanning QR codes.</p>
 				</div>
-				<h4>Load a card with tokens or Ether</h4>
-				<p>Load an Ether Card from any wallet that supports scanning QR codes.</p>
-			</div>
-			<div class="col-md-4 text-center">
-				<!-- <i class="font-icon ion-happy"></i> -->
-				<div class="icons">
-					<img src="/img/icon-03.png" alt="">
+				<div class="col-md-4 text-center">
+					<!-- <i class="font-icon ion-happy"></i> -->
+					<div class="icons">
+						<img src="/img/icon-03.png" alt="">
+					</div>
+					<h3>Give it as a gift</h3>
+					<p>The card can be redeemed using MyCrypto or our own token sweeping tool.</p>
 				</div>
-				<h4>Give it as a gift</h4>
-				<p>The card can be redeemed using MyCrypto or our own token sweeping tool.</p>
 			</div>
 		</div>
+
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<h2>How Ether Cards work</h2>
+			<div class="col-md-12 title mt-50 mb-15">
+				<h1>How Ether Cards work</h1>
 				<p>Each card has its own unique Ethereum address, printed on the back in QR code and text form, and a private key, hidden under a scratch-off panel. To use one, simply scan the code, deposit some Ether or tokens using your favourite wallet app, and give it to the lucky recipient.</p>
 				<p>When they want to redeem it, they can scratch off the panel, and use their own wallet app to 'sweep' the funds into their newly created account.</p>
 				<p>Each unscratched card's security is <a href="#faq">guaranteed by a smart contract</a>.</p>
@@ -129,14 +134,17 @@
 		</div>
 	</div>
 </section>
+
 <section id="pricing" class="section paddingbottom-60 bg-grey">
 	<div class="container">
+		
 		<div class="row">
 			<div class="col-md-12 title">
-				<h2>Buy now</h2>
+				<h1>Buy now</h1>
 				<p>Ether cards are available for purchase now, with free worldwide shipping and a minimum order of just two cards.</p>
 			</div>
 		</div>
+
 		<div class="pricing-wrapper row">
 			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 				<div class="pricing-table">
@@ -250,18 +258,19 @@
 				</div>
 			</div>
 		</div>
-
+	</div>
 </section>
+
 <section id="verify" class="section bg-grey">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2 title">
-				<h2>Verify your Ether Card</h2>
+			<div class="col-md-12 title">
+				<h1>Verify your Ether Card</h1>
 				<p>Easily verify that you have a genuine Ether Card, and that a guarantee deposit has been paid on it.</p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-12">
 				<div class="input-group">
 					<input class="form-control bottom-form-input" type="text" id="checkaddress" placeholder="Address">
 					<div class="input-group-btn">
@@ -270,20 +279,23 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
 			<div id="checkresult" class="col-md-8 col-md-offset-2">
 			</div>
 		</div>
 	</div>
 </section>
+
 <section id="redeeming" class="section bg-grey">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2 title">
-				<h2>Redeeming your Ether Card</h2>
+			<div class="col-md-12 title">
+				<h1>Redeeming your Ether Card</h1>
 				<p>Step by step instructions on installing a wallet and claiming your ether.</p>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-5 text-justify">
 				<h2>Using MyCrypto</h2>
@@ -299,11 +311,12 @@
 		</div>
 	</div>
 </section>
+
 <section id="redeem-old" class="bg-grey">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 title">
-				<h2>Redeeming your classic Ether Card</h2>
+				<h1>Redeeming your classic Ether Card</h1>
 			</div>
 		</div>
 		
@@ -348,7 +361,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 title">
-				<h2>Frequently Asked Questions</h2>
+				<h1>Frequently Asked Questions</h1>
 			</div>
 		</div>
 		<div class="row text-justify">
