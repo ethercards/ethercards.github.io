@@ -1,0 +1,63 @@
+.mt-50 {
+    margin-top: 50px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+body:after{
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    background: url(../img/finaltoucanheader.jpg) center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body {
+    font-size: 18px;
+}
+
+body, .title p {
+    color: #000;
+}
+
+.title p {
+    font-style: normal;
+}
+
+.cols-with-icons h3{
+    margin-bottom: 0;
+}
+
+.pricing-table img {
+    display:block;
+    max-width: 289px;
+    margin:0 auto;
+    width:100%;
+}
+
+div.icons {
+    height: 86px;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+}
+div.icons img {
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .pricing-table .price {
+        font-size: 44px;
+    } 
+
+    h3 {
+        font-size: 20px;
+    }
+}

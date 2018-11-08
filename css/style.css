@@ -57,9 +57,9 @@ table { border-collapse: collapse; border-spacing: 0;}
 /* ==========================================================================
 Basic Styling
 ========================================================================== */
-body { font-size: 16px; line-height: 26px; font-family: 'Source Sans Pro', sans-serif; font-weight: 400; color: #888; letter-spacing: normal; -webkit-font-smoothing: antialiased!important; font-smoothing: antialiased!important; background-color: #FFF; height: 100%!important; }
+body { font-size: 16px; line-height: 26px; font-family: 'Roboto', sans-serif; font-weight: 400; color: #888; letter-spacing: normal; -webkit-font-smoothing: antialiased!important; font-smoothing: antialiased!important; background-color: #fff; height: 100%!important; }
 
-h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", Lucida Sans Unicode,Arial,sans-serif; font-weight: normal; position: relative; color: #1d1d1d; letter-spacing: -0.5px;}
+h1, h2, h3, h4, h5, h6 {font-family: "Roboto", Lucida Sans Unicode,Arial,sans-serif; font-weight: normal; position: relative; color: #1d1d1d; letter-spacing: -0.5px;}
 h1, h2, h3, h4, h5, h6 { margin-top: 0;  margin-bottom: 10px; padding-top: 0;  position: relative;}
 
 h1 {font-size: 38px;}
@@ -88,7 +88,7 @@ body { webkit-tap-highlight-color: rgba(255,255,255,.2);}
 
 form {margin-bottom: 0;}
 
-button {padding: 10px 14px; border-radius: 0; font-family: Montserrat,sans-serif; font-size: 11px; letter-spacing: .05em;text-transform: uppercase;}
+button {padding: 10px 14px; border-radius: 0; font-family: Roboto,sans-serif; font-size: 11px; letter-spacing: .05em;text-transform: uppercase;}
 iframe {width: 100%;}
 
 /* ==========================================================================
@@ -125,7 +125,7 @@ Classes
 
 .capitalize {text-transform: capitalize!important;}
 .italic {font-style: italic;}
-.crimson-text {font-family: "Crimson Text", Georgia, "Lato";}
+.crimson-text {font-family: "Roboto", Georgia, "Lato";}
 .left-align {text-align: left!important;}
 
 .font18 {font-size: 18px;}
@@ -133,7 +133,7 @@ Classes
 /* ==========================================================================
 Buttons
 ========================================================================== */
-.btn-blue { font-size: 13px; font-family: "Montserrat", sans-serif; letter-spacing: 1px; margin: 20px 0px; padding: 10px 20px; border: 2px solid #3598dc; color: #3598dc; font-weight: normal; background-color: transparent;}
+.btn-blue { font-size: 13px; font-family: "Roboto", sans-serif; letter-spacing: 1px; margin: 20px 0px; padding: 10px 20px; border: 2px solid #3598dc; color: #3598dc; font-weight: normal; background-color: transparent;}
 .btn-blue:hover {background-color: #3598dc; color: #FFF;}
 
 .btn-black {background: #030303!important; border-color: #000;}
@@ -160,7 +160,10 @@ Backgrounds
 .stripe {background-image:url(../img/stripe.png);}
 .cartographer {background-image:url(../img/cartographer.png);}
 
-.bg-banner {background: url(../img/toucanheader.jpg) no-repeat center bottom; background-size: cover;  background-attachment: fixed;}
+/* 
+  !!! header image attached to the body in ethercards.css !!!
+.bg-banner {background: url(../img/finaltoucanheader.jpg) no-repeat center bottom; background-size: cover;  background-attachment: fixed;}
+ */
 
 /* ==========================================================================
 Gallery
@@ -184,7 +187,7 @@ Optins
 .banner-form h4 {margin-bottom: 0;}
 .banner-form input[type="text"],
 .banner-form input[type="email"] { color: #333; border: none; outline: none; width: 100%; padding: 15px 20px; display: block; transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; border-radius: 0; height: auto; background: #FFF;}
-.banner-form button { text-align: center; color: #fff; padding: 16px 0; background: #1a1a1a; border: none; transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; font-weight: bold; border-radius: 0; width: 100%; display: block; font-family: "Montserrat";}
+.banner-form button { text-align: center; color: #fff; padding: 16px 0; background: #1a1a1a; border: none; transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; -webkit-transition: all 0.4s ease-in-out; -o-transition: all 0.4s ease-in-out; font-weight: bold; border-radius: 0; width: 100%; display: block; font-family: "Roboto";}
 .banner-form button i { color: #fff; font-size: 24px;}
 .banner-form button:hover{background: #090C0F; color: #FFF;}
 .banner-form .form-group {margin-bottom: 0;}
@@ -195,14 +198,14 @@ Optins
 .bottom-form .form-control {padding: 23px 20px; }
 .bottom-form .input-group { margin: 0 auto;}
 .bottom-form .form-control,
-.bottom-form button { background: #fff; min-height: 60px; font-size: 14px; border-radius: 0; font-family: "Montserrat";}
+.bottom-form button { background: #fff; min-height: 60px; font-size: 14px; border-radius: 0; font-family: "Roboto";}
 .bottom-form button {font-size: 13px;}
-.bottom-form button { line-height: 26px; padding: 15px 25px; background: #3598dc; color: #FFF;  border-radius: 0 3px 3px 0; border: none;  transition: all 0.2s ease-out;  font-family: "Montserrat";}
+.bottom-form button { line-height: 26px; padding: 15px 25px; background: #3598dc; color: #FFF;  border-radius: 0 3px 3px 0; border: none;  transition: all 0.2s ease-out;  font-family: "Roboto";}
 .bottom-form button:hover { background: #000; color: #FFF;}
 
 
 .banner-content .vertical-form {background: rgba(0,0,0,0.8); -webkit-box-shadow:0 0 10px rgba(0,0,0,.2); -moz-box-shadow: 0 0 10px rgba(0,0,0,.2); box-shadow: 0 0 10px rgba(0,0,0,.2); padding: 25px; padding-bottom: 15px; border-bottom: 4px solid rgba(0,0,0,0.8);}
-.banner-content .vertical-form h3 {background: rgba(0,0,0,0.6); margin:-25px; margin-bottom: 20px; padding: 20px; color: #f5f5f5; font-size: 24px; font-weight: normal; text-align: center; text-transform: capitalize; font-family: "Montserrat";}
+.banner-content .vertical-form h3 {background: rgba(0,0,0,0.6); margin:-25px; margin-bottom: 20px; padding: 20px; color: #f5f5f5; font-size: 24px; font-weight: normal; text-align: center; text-transform: capitalize; font-family: "Roboto";}
 .banner-content .vertical-form h3 strong {font-size: 28px; font-weight: bold; color: #FFF;}
 .banner-content .vertical-form input{color: #333; border: none; outline: none; width: 100%; padding: 15px 20px; display: block; transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; border-radius: 0; height: auto; background: #FFF; margin-bottom: 20px; background: rgba(0,0,0,0.2); border: 1px solid rgba(0,0,0,0.2); border-left: 2px solid #3598dc;}
 .banner-content .vertical-form button { padding: 15px 20px; margin: 0 auto; border-radius: 0; display: block; background: #3598dc; border-width: 2px; color: #FFF; border-color: transparent; width: 100%;}
@@ -219,7 +222,7 @@ Headline
 section:first-of-type .title:after { margin-top: 30px;}
 .title {margin-bottom: 80px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.03); text-align: center; position: relative;}
 .title:after {display:inline-block; text-align:center; font-family: Ionicons; content:"\f123"; position:absolute; right: 0; left: 0; margin:0 auto; font-size: 10px; margin-top: 5px; height: 30px; width: 30px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.03); background: #FFF; line-height: 30px;}
-.title p {font-family: "Crimson Text", serif; font-size: 18px; font-style: italic; color: #666;}
+.title p {font-family: "Roboto", serif; font-size: 18px; font-style: italic; color: #666;}
 .title h2 {text-transform: uppercase;}
 .title h1 {letter-spacing: -2px;}
 .title h1 strong {text-transform: capitalize}
@@ -232,7 +235,7 @@ section:first-of-type .title:after { margin-top: 30px;}
 ========================================================================== */
 .navbar-inverse { margin-bottom: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out; -moz-transition: background .5s ease-in-out,padding .5s ease-in-out; transition: background .5s ease-in-out,padding .5s ease-in-out; border: none; background-color: rgba(0,0,0,0.4); padding: 10px 0; box-shadow: 0 1px rgba(255,255,255,0.1);}
 .navbar-inverse .navbar-nav > li {padding: 15px 15px;}
-.navbar-inverse .navbar-nav > li > a { color: #CCC; display: block; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; text-transform: uppercase; font-size: 12px; font-family: "Montserrat", "Montserrat", Lucida Sans Unicode; padding: 0; display: inline-block; line-height: normal; }
+.navbar-inverse .navbar-nav > li > a { color: #CCC; display: block; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; text-transform: uppercase; font-size: 12px; font-family: "Roboto", "Roboto", Lucida Sans Unicode; padding: 0; display: inline-block; line-height: normal; }
 
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-nav > li {-webkit-transition: all 400ms linear; -moz-transition: all 400ms linear; -o-transition: all 400ms linear; -ms-transition: all 400ms linear; transition: all 400ms linear;}
@@ -282,7 +285,7 @@ section:first-of-type .title:after { margin-top: 30px;}
 /* ==========================================================================
 Logo
 ======================================================.==================== */
-.navbar-inverse .navbar-brand  {color: #FFF; font-family: "Montserrat"; font-size: 30px; margin-top: 15px; padding: 0; letter-spacing: 0.05px;}
+.navbar-inverse .navbar-brand  {color: #FFF; font-family: "Roboto"; font-size: 30px; margin-top: 15px; padding: 0; letter-spacing: 0.05px;}
 .scroll-fixed-navbar.navbar-inverse .navbar-brand {color: #FFF;}
 .text-logo img {margin-right: 10px; height: 32px; display: inline; vertical-align: middle;}
 
@@ -291,15 +294,15 @@ Banner
 ========================================================================== */
 .banner-content { clear: both; padding-top: 45px; padding-bottom: 20px; text-align: center; height: 100%; position: relative;}
 .banner-content h1 {font-weight: 700; text-transform: uppercase; margin-bottom: 15px; font-size: 52px; line-height: 72px; color: #FFF;}
-.banner-content h1 span {font-family: "Crimson Text", Georgia; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 48px; font-weight: normal; border-bottom: double #FFF;}
-.banner-content h3 {font-family: "Crimson Text", Georgia; font-size: 28px; color: #CCC; margin: 20px 0;}
-.banner-content h4 {font-family: "Crimson Text", Georgia; font-size: 20px; color: #CCC; font-style: italic;}
+.banner-content h1 span {font-family: "Roboto", Georgia; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 48px; font-weight: normal; border-bottom: double #FFF;}
+.banner-content h3 {font-family: "Roboto", Georgia; font-size: 28px; color: #CCC; margin: 20px 0;}
+.banner-content h4 {font-family: "Roboto", Georgia; font-size: 20px; color: #CCC; font-style: italic;}
 .banner-content p {color: rgba(255,255,255, 0.8);}
 .banner-content .video-container iframe {height: 360px;}
 .banner-content .video-container2 iframe {height: 410px;}
 
 .banner-content .buttons-group {margin-top: 30px;}
-.banner-content .buttons-group a {padding: 15px 25px; border-radius: 0; font-family: Montserrat,sans-serif; font-size: 14px; letter-spacing: .05em;text-transform: uppercase; background: transparent; margin-right: 10px; margin-top: 20px; color: #FFF;}
+.banner-content .buttons-group a {padding: 15px 25px; border-radius: 0; font-family: Roboto,sans-serif; font-size: 14px; letter-spacing: .05em;text-transform: uppercase; background: transparent; margin-right: 10px; margin-top: 20px; color: #FFF;}
 
 .banner-list {margin-bottom: 20px;}
 .banner-list li {color: rgba(255,255,255, 0.8); margin-bottom: 10px; position: relative; padding-left: 40px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom: 10px;}
@@ -355,14 +358,14 @@ Pricing
 .pricing-table .price sup { font-size: 14px;  margin-top: -10px}
 
 .table-list { background: #FFF;}
-.table-list li {padding: 14px 10px; border-bottom: 1px solid #f8f8f8; font-family: "Crimson Text"; font-style: italic; text-align: center;}
+.table-list li {padding: 14px 10px; border-bottom: 1px solid #f8f8f8; font-family: "Roboto"; font-style: italic; text-align: center;}
 .table-list li:last-child {border-bottom: none; margin-bottom: 10px;}
 .table-list del {color: #D0D0D0;}
 .table-buy {display: block; padding:15px 0;}
 .table-buy input[type=button], .table-buy a {color: #FFF; background: #1a1a1a; padding: 10px; display: block; width: 100%; margin:0 auto; text-align: center; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; border: 1px solid #1a1a1a;}
 .table-buy input[type=button]:hover, .table-buy a:hover { background: #FFF; color: #1a1a1a;}
 
-.price-label {font-weight: bold; font-style: normal; font-family: "Montserrat"; margin-left: 5px;}
+.price-label {font-weight: bold; font-style: normal; font-family: "Roboto"; margin-left: 5px;}
 
 /* ==========================================================================
 FAQ
@@ -370,7 +373,7 @@ FAQ
 .faq-body { display: block; margin-bottom: 40px; padding-left: 60px; position: relative; padding-right: 20px;}
 .faq-body i {font-size: 46px; position: absolute; left: 0; color: #3598dc;}
 .faq-body h4 {font-size: 16px; }
-.answer p { font-family: "Crimson Text"; font-style: italic; font-size: 17px;}
+.answer p { font-family: "Roboto"; font-style: italic; font-size: 17px;}
 
 /* ==========================================================================
 Team Details
@@ -379,7 +382,7 @@ Team Details
 	.team-details:last-child{border-right: none;}
 .team-details img {display: block; width: 100%;}
 .team-details h4 {color: #3598dc; border-bottom: 3px solid rgba(255,255,255,0.1); display: inline-block; padding-bottom: 5px;}
-.team-details span {display: block; margin-bottom: 15px; font-family: 'Crimson Text'; font-style: italic;}
+.team-details span {display: block; margin-bottom: 15px; font-family: 'Roboto'; font-style: italic;}
 
 .team-img-hover { position: relative; display: inline-block; max-width: 100%; overflow: hidden; width: 100%;}
 .team-img-hover .overlay-hover { width: 100%; height: 100%; display: block; background: transparent; position: absolute; top: 0; color: #fff; text-align: center; line-height: 100%; -webkit-transition: all .5s; transition: all .5s;}
@@ -400,7 +403,7 @@ Testimonial Carousel
 #quote-carousel .carousel-indicators li { width: 60px; height: 60px; margin: 5px; cursor: pointer; border: 3px solid #CCC; border-radius: 50%; opacity: 0.4; overflow: hidden; transition: all 0.4s;}
 #quote-carousel .carousel-indicators .active { width: 70px; height: 70px; border-radius: 100%; border-color: #3598dc; opacity: 1; overflow: hidden;}
 #quote-carousel .carousel-inner {}
-#quote-carousel .item blockquote { border-left: none; margin: 0; font-family: "Crimson Text", "Georgia"; font-size: 22px; line-height: 30px;}
+#quote-carousel .item blockquote { border-left: none; margin: 0; font-family: "Roboto", "Georgia"; font-size: 22px; line-height: 30px;}
 #quote-carousel .item small {font-weight: bold;}
 
 /* ==========================================================================
@@ -439,7 +442,7 @@ Footer
 .quick-links li:before {display:inline-block; text-align:center; font-family: Ionicons; content:"\f125"; position:absolute; left:0px; top:4px; font-size: 10px; transition:all 0.3s ease-in; color: #f8f8f8;}
 .quick-links .label {margin-left: 10px;}
 
-.footer-sub {font-family: "Montserrat", "Lato"; font-size: 12px; text-transform: uppercase; font-weight: 300; letter-spacing: 0.1px}
+.footer-sub {font-family: "Roboto", "Lato"; font-size: 12px; text-transform: uppercase; font-weight: 300; letter-spacing: 0.1px}
 .footer-sub a {color: #FFF;}
 
 /* ==========================================================================
