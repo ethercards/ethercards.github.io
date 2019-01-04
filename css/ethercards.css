@@ -60,12 +60,218 @@ div.icons img {
     width: 100%;
 }
 
+
+/* cart modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.cart-modal .row {
+    height: 100vh;
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cart-modal-content{
+    position: relative;
+    background: white;
+    padding: 0;
+}
+
+
+.product-display {
+    padding: 0;
+    background: #0f1027;
+    padding: 30% 0;
+}
+
+.product-display img{
+    display: block;
+    border-radius: 22px;
+    width: 80%;
+    transform: rotate(-90deg);
+    margin: 0 auto;
+}
+
+#close-modal {
+    display: block;
+    border: none;
+    font-size: 1em;
+    color:#ccc;
+    margin:0;
+    padding:20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: color 0.5s ease;
+    z-index: 100;
+}
+
+#close-modal:hover {
+    color:#000;
+}
+
+.product-description {
+    padding-bottom: 25px;
+}
+
+.product-description h4 {
+    margin: 20px 0 0 0;
+}
+
+.product-description h3 {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+h3#product-price{
+    color: #68ba1c;
+    margin-bottom:25px;
+}
+
+.product-description label{
+    font-weight: normal;
+}
+
+
+/* custom spinner*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+.spinner {
+    width:64px;
+    height: 34px;
+    position: relative;
+}
+
+.spinner span{
+    display: block;
+    width:26px;
+    text-align: center;
+    line-height: 16px;
+    padding:0;
+    border: solid 1px #ccc;
+    position: absolute;
+    right:0;
+    cursor: pointer;
+    color:#ccc;
+    background-color: transparent;
+    transition: color 0.5s ease;
+    transition: background-color 0.5s ease;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.spinner span:hover{
+    color:#000;
+    background-color: #ccc;
+}
+
+span.up {
+    top:0;
+    border-radius: 0 4px 0 0;
+}
+
+span.down {
+    bottom:0;
+    border-top: none;
+    border-radius: 0 0 4px 0;
+}
+
+.cart-button {
+    display:block;
+    background:#000;
+    margin: 10px 0;
+    padding: 10px 0;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+#checkout{
+    background: #68ba1c;
+}
+
+#checkout:hover{
+    background: #4c8615;
+}
+
+#add-to-cart{
+    margin-top:50px;
+}
+
+#add-to-cart:hover{
+    background: #444;
+}
+
+
+@media (max-width: 991px) {
+    .product-display {
+        padding: 50px 0;
+    }
+    .product-display img{
+        transform: rotate(0deg);
+        width:65%
+    }
+
+    .cart-modal {
+        overflow-y: initial;
+    }
+
+}
+@media (min-width: 992px) {
+    .product-display {
+        padding: 40% 0;
+    }
+}
+@media (min-width: 1200px) {
+    .product-display {
+        padding: 30% 0;
+    }
+}
+
+@media (min-width: 1500px) {
+    .product-display {
+        padding: 20% 0;
+    }
+}
+
 @media (max-width: 1200px) {
-    .pricing-table .price {
-        font-size: 44px;
-    } 
+
 
     h3 {
         font-size: 20px;
     }
+
+    
+
+    
 }
