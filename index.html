@@ -1,457 +1,427 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en"> <!--<![endif]-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-	<meta charset="utf-8">
-	<title>ether.cards</title>
-    <meta name="description" content="Ether, crystallized.">
-    <meta name="author" content="Akomba Labs">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto:400,700" rel="stylesheet">
 
-    <link rel="canonical" href="https://ether.cards/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ethercards.css">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#000000">
 
-	<link href="/img/favicon.png" rel="icon">
+    <title>ether.cards</title>
+  </head>
+  <body>
+    <div class="container" id="main">
+      <nav class="navbar navbar-expand-lg fixed-top" id="navbar-fixed">
+        <div class="container">
+          <a class="navbar-brand text-logo" href="#"><img src="img/logo.png"> ETHER.<span>CARDS</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-4">
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#home">Home</a></li> 
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#how-to">How to</a></li> 
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#order">Shop</a></li>
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#custom-cards">Custom cards</a></li>
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#card-types">Card types</a></li>
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#clients">Clients</a></li>
+              <li class="nav-item"><a  class="scroll-link nav-link" href="#contact-us">Contact Us</a></li>
+              <li class="nav-item"><a  class="nav-link cart" href="#!/~/cart">Shopping cart<span class="cart-item-counter">0</span></a></li>
+             <!--  <li class="nav-item"><a  class="nav-link cart" href="#!/~/cart"><span class="cart-image"></span><span class="cart-item-counter">0</span></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-	<link href="/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/ionicons.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/ethercards.css" rel="stylesheet">
-	<meta name="p:domain_verify" content="a5e8f97b3c59fb1e69a4b3f3e3321726"/>
+      <main role="main" class="">
 
-<!-- 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,300,200,600,600italic,700">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic"> -->
+        <section class="section" id="home">
+          
+          <div class="row mt-0">
+            <div class="col-md-10 offset-md-1 text-center">
+              <h1 class="header mb-0 abs">Give the gift of ether!</h1>
+              <img class="header-image" src="img/HEADER-IMAGE-NEW.jpg" alt="">
+              <p>Ether.Cards are cryptocurrency gift cards that make it incredibly easy to gift tokens to one another.  Want to distribute your token or introduce someone to cryptocurrencies? Ether.Cards is the best way to get that done without the recipient needing much technical know-how. </p>
+            </div>
+          </div>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+          <div class="row mb-0">
+            <div class="col-md-10 offset-md-1">
+              <div class="row row-eq-height">
+                <div class="col-md-4 ehbox text-center">
+                  <h3 class="subhead">Buy</h3>
+                  <p>Gift tokens in style by choosing your favourite design from our store or create your own custom cards <a href="#custom-cards" class="arrow-link">here.</a></p>
+                  <div class="img-container">
+                    <img src="img/icon_01.png" alt="BUY">
+                  </div>
+                </div>
+                <div class="col-md-4 ehbox text-center">
+                  <h3 class="subhead">Load</h3>
+                  <p>Load an Ether Card with tokens using any wallet that supports scanning QR codes.</p>
+                  <div class="img-container">
+                    <img src="img/icon_02.png" alt="LOAD">
+                  </div>
+                </div>
+                <div class="col-md-4 ehbox text-center">
+                  <h3 class="subhead">Redeem</h3>
+                  <p>Redeem your tokens by using MyCrypto or any mobile wallet that has a seed word restoration feature. </p>
+                  <div class="img-container">
+                    <img src="img/icon_03.png" alt="REDEEM">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-	<!--[if lt IE 9]>
-		<script src="/js/html5shiv.js"></script>
-		<script src="/js/respond.js"></script>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<![endif]-->
+          <div id="how-to" class="row mt-0 pt-5">
+            <div class="col-md-8 offset-md-2 text-center">
+              <h1 class="header">HOW DO I USE AN ETHER.CARD?</h1>
 
-	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>	<script type="text/javascript">window.jQuery || document.write('<script src="/js/jquery-2.1.0.min.js"><\/script>')</script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <p class="number">1</p><p class="description"> Download any wallet with seed<br>word restoration functionality</p>
+                  </div>
+                  <div class="carousel-item">
+                      <p class="number">2</p><p class="description">Scratch the panel to<br>reveal your 12 seed words.</p>
+                  </div>
+                  <div class="carousel-item">
+                      <p class="number">3</p><p class="description">Voila! Your funds are now<br>transferred over to your wallet.</p>
 
-	  ga('create', 'UA-84449-11', 'auto');
-	  ga('send', 'pageview');
-	</script>
-</head>
-
-<body data-spy="scroll" data-target=".navigation">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand text-logo" href="#"><img src="/img/logo.png"> ETHER CARDS</a>
-				</div>
-			<div class="navigation navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/#top-banner">Home</a></li>
-					<li><a href="/#features">Features</a></li>
-					<li><a href="/#pricing">Buy now</a></li>
-					<!--<li><a href="/#verify">Verify</a></li>-->
-					<li><a href="/#redeeming">Redeeming</a></li>
-					<li><a href="/#faq">FAQ</a></li>
-					<li><a href="/blog/">Blog</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<section id="top-banner" class="section padding-120">
-	<div class="bg-overlay"></div>
-	<div class="container">
-		<div class="row banner-content left-align">
-
-			<div class="col-md-6">
-				<h1>Ether, Crystallized.</h1>
-				<h3></h3>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-<section id="intro" class="section nopadding-bottom  bg-grey">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1 title">
-				<h1>Give the gift of Ether</h1>
-				<p>Ether cards are 'physical ether'. They're a quick and convenient way to give ether, tokens, or other blockchain assets to friends and family, and a great way to introduce people to the power of the Ethereum blockchain.</p>
-			</div>
-		</div>
-		<div class="row cols-with-icons">
-			<div class="col-md-12" >
-				<div class="col-md-4 text-center">
-					<!-- <i class="font-icon ion-email"></i> -->
-					<div class="icons">
-						<img src="/img/icon-01.png" alt="">
-					</div>
-					<h3>Get your Ether Cards</h3>
-					<p>Buy them <a href="#pricing">here</a> with free shipping.</p>
-				</div>
-				<div class="col-md-4 text-center">
-					<!-- <i class="font-icon ion-card"></i> -->
-					<div class="icons">
-						<img src="/img/icon-02.png" alt="">
-					</div>
-					<h3>Load a card with tokens or Ether</h3>
-					<p>Load an Ether Card from any wallet that supports scanning QR codes.</p>
-				</div>
-				<div class="col-md-4 text-center">
-					<!-- <i class="font-icon ion-happy"></i> -->
-					<div class="icons">
-						<img src="/img/icon-03.png" alt="">
-					</div>
-					<h3>Give it as a gift</h3>
-					<p>The card can be redeemed using MyCrypto or our own token sweeping tool.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12 title mt-50 mb-15">
-				<h1>How Ether Cards work</h1>
-				<p>Each card has its own unique Ethereum address, printed on the back in QR code and text form, and a private key, hidden under a scratch-off panel. To use one, simply scan the code, deposit some Ether or tokens using your favourite wallet app, and give it to the lucky recipient.</p>
-				<p>When they want to redeem it, they can scratch off the panel, and use their own wallet app to 'sweep' the funds into their newly created account.</p>
-				<p>Each unscratched card's security is <a href="#faq">guaranteed by a smart contract</a>.</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="pricing" class="section paddingbottom-60 bg-grey">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-12 title">
-				<h1>Buy now</h1>
-				<p>Ether cards are available for purchase now, with free worldwide shipping and a minimum order of just two cards.</p>
-			</div>
-		</div>
-
-		<div class="pricing-wrapper row">
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">Seasonal Design</h3>
-					<img src="/img/seasonal.png"">
-					<h4 class="price">
-						4.50 USD<br>
-						<sup>or pay in ETH, ETC or BTC.<br>Min order 2.</sup>
-					</h4>
-					<ul class="table-list">
-						<li>Seasonal ether.cards design</li>
-						<li>Gift sleeve included</li>
-						<li>Includes postage anywhere in the world</li>
-					</ul>
-					<div class="table-buy">
-						<input type="button" value="Buy Now" onclick="addProduct({id: 96580469, quantity: 2})">
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">Singapore Design</h3>
-					<img src="/img/sg.png"">
-					<h4 class="price">
-						3.50 USD<br>
-						<sup>or pay in ETH, ETC or BTC.<br>Min order 2.</sup>
-					</h4>
-					<ul class="table-list">
-						<li>Singapore ether.cards design</li>
-						<li>Gift sleeve included</li>
-						<li>Includes postage anywhere in the world</li>
-					</ul>
-					<div class="table-buy">
-						<input type="button" value="Buy Now" onclick="addProduct({id: 95839242, quantity: 2})">
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">Toucan Design</h3>
-					<img src="/img/toucan.png"">
-					<h4 class="price">
-						3.50 USD<br>
-						<sup>or pay in ETH, ETC or BTC.<br>Min order 2.</sup>
-					</h4>
-					<ul class="table-list">
-						<li>Toucan ether.cards design</li>
-						<li>Gift sleeve included</li>
-						<li>Includes postage anywhere in the world</li>
-					</ul>
-					<div class="table-buy">
-						<input type="button" value="Buy Now" onclick="addProduct({id: 82436775, quantity: 2})">
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="pricing-wrapper row">
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">DevCon4 Prague Design</h3>
-					<img src="/img/devcon.png"">
-					<h4 class="price">
-						5.00 USD<br>
-						<sup>or pay in ETH, ETC or BTC.</sup>
-					</h4>
-					<ul class="table-list">
-						<li>Limited Edition DevCon4 Collectible</li>
-						<li>Availible only until 4th November 2018</li>
-						<li>Includes postage anywhere in the world</li>
-					</ul>
-					<div class="table-buy">
-						<input type="button" value="Buy Now" onclick="addProduct({id: 95839254, quantity: 1})">
-					</div>
-				</div>
-			</div>
+                  </div>
+                </div>
+              </div>
 
 
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">Ethereum Space Design</h3>
-					<img src="/img/ethereumspace.png"">
-					<h4 class="price">
-						3.50 USD<br>
-						<sup>or pay in ETH, ETC or BTC.<br>Min order 2.</sup>
-					</h4>
-					<ul class="table-list">
-						<li>Ethereum Space ether.cards design</li>
-						<li>Gift sleeve included</li>
-						<li>Includes postage anywhere in the world</li>
-					</ul>
-					<div class="table-buy">
-						<input type="button" value="Coming Soon" onclick="addProduct({id: 97486127, quantity: 2})">
-					</div>
-				</div>
-			</div>
+            </div>
+          </div>
 
-			<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
-				<div class="pricing-table">
-					<h3 class="pricing-title">Larger Quantities</h3>
-					<h4 class="price">Enquire<br/>&nbsp;</h4>
-					<ul class="table-list">
-						<li>Larger quantities available (Minimum order of 250 cards)</li>
-						<li>Stock or custom design</li>
-					</ul>
-					<div class="table-buy">
-						<a href="mailto:cards@ether.cards">Contact Us</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="redeeming" class="section bg-grey">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 title">
-				<h1>Redeeming your Ether Card</h1>
-				<p>Step by step instructions on installing a wallet and claiming your ether.</p>
-			</div>
-		</div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DYefvkNiKbA" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
 
-		<div class="row">
-			<div class="col-md-5 text-justify">
-				<h2>Using MyCrypto</h2>
-				<p>Go to <a href="https://www.mycrypto.com/#send-transaction">www.mycrypto.com</a>, and click "Send Ether". Under "Select the format of your private key", choose "Mnemonic Phrase". Enter the phrase on the back of your card, and click "Unlock".</p>
-				<p>If your card has a QR code instead of a phrase, see the <a href="/#redeem-old">instructions for redeeming a classic ether card</a>.</p>
-				<p>When you click Unlock, you will be presented with a list of addresses and balances. The first address in the list (already selected) will match the one printed on the card. Click "Unlock".</p>
-				<p>You will be shown information about your Ether Card account, including account balances, and a form to send funds to other Ethereum accounts. You can also send tokens using "Send Tokens" in the menu at the top of the screen.</p>
-				<p>We highly recommend generating a new wallet - either using MyCrypto, or the client of your choice - and transferring your funds onto that account. Remember to back up your accounts!</p>
-			</div>
-			<div class="col-md-6 col-md-offset-1">
-				<img src="/img/mc-mnemonic.png" alt="" title="" class="img-responsive" />
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="redeem-old" class="bg-grey">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 title">
-				<h1>Redeeming your classic Ether Card</h1>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-5 text-justify">
-				<h2>JAXX</h2>
-				<p><a href="https://jaxx.io/">JAXX</a> is a multi-currency wallet available for mobile, browser, and desktop platforms. Instructions shown here are for OSX, but the user interface is similar on all platforms.</p>
-
-				<h3>Installation</h3>
-				<p>First, install JAXX on your device. The <a href="https://jaxx.io/">JAXX site</a> provides instructions and downloads for each supported platform.</p>
-
-				<h3>Creating a Wallet</h3>
-				<p>Next, start the app, and when prompted, choose "Create New Wallet". After a short progress screen, you will be taken to your newly created wallet.</p>
-			</div>
-			<div class="col-md-3 col-md-offset-1">
-				<img src="/img/jaxx-1.png" alt="" title="" class="img-responsive" />
-			</div>
-			<div class="col-md-3">
-				<img src="/img/jaxx-2.png" alt="" title="" class="img-responsive" />
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-5 text-justify">
-				<h3>Importing your Ether Card</h3>
-				<p>From the new wallet screen, click on the menu, select "Tools", and choose "Transfer Paper Wallet". You will be prompted with a confirmation screen; read it and click "I understand".</h3>
-				<p>On the next screen, you're prompted to enter the private key. Click on the camera icon on the right of the text area, and use your device's camera to scan the QR code from under the scratch panel on your Ether Card. Once you have, click 'Next'.</p>
-				<p>Finally, Jaxx shows you the balance of your card. Click "Transfer to Jaxx" and you're done!</p>
-				<p>If you want to continue using your Ether Card as a convenient way for people to send you funds, remember to cover up the private key so that people can't see it.</p>
-			</div>
-			<div class="col-md-3 col-md-offset-1">
-				<img src="/img/jaxx-3.png" alt="" title="" class="img-responsive" />
-			</div>
-			<div class="col-md-3">
-				<img src="/img/jaxx-4.png" alt="" title="" class="img-responsive" />
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="faq" class="section bg-grey">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 title">
-				<h1>Frequently Asked Questions</h1>
-			</div>
-		</div>
-		<div class="row text-justify">
-			<div class="col-md-6 col-sm-6">
-				<div class="faq-body">
-					<i class="ion-ios-help-outline"></i>
-					<h4>Do Ether cards come with ether preloaded?</h4>
-					<div class="answer">
-						<p>No, preloaded cards are not available at present. You will need to buy a card, and add value to it yourself.</p>
-					</div>
-				</div>
-				<div class="faq-body">
-					<i class="ion-ios-help-outline"></i>
-					<h4>Will you offer more designs?</h4>
-					<div class="answer">
-						<p>Yes! Keep an eye out here, or <a href="https://twitter.com/ether_cards">follow us on Twitter</a>, for more.</p>
-					</div>
-				</div>
-				<div class="faq-body">
-					<i class="ion-ios-help-outline"></i>
-					<h4>What about customised cards?</h4>
-					<div class="answer">
-						<p>Yes! We offer customised cards in quantities starting at 250. <a href="mailto:cards@ether.cards">Contact us</a> for more details.</p>
-					</div>
-				</div>
-				<div class="faq-body">
-					<i class="ion-ios-help-outline"></i>
-					<h4>What about encrypted keys?</h4>
-					<div class="answer">
-						<p>We're working on other ways to improve the security of Ether Cards, and to expand the applications they can be put to. However, this may take a while, as improvements such as encrypted keys will require wallet support before they can be widely used.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<div class="faq-body">
-					<i class="ion-ios-help-outline"></i>
-					<h4>How secure are Ether Cards?</h4>
-					<div class="answer">
-						<p>We order in 'blanks' - cards with everything but the keypair printed - and print the keypairs ourselves in small batches. The generation process is done entirely in memory and streamed to the printer on a secure computer. You can examine the code for generating cards <a href="https://github.com/ethercards/printer">here</a>.</p>
-						<p>The keypairs are printed, and then the scratch panel applied in a single operation using an IDP Smart 70 card printer. The black ribbon - which contains a negative image of everything it prints - is locked securely in the printer, which is chained to an immovable object. When the ribbon is used up, it's securely destroyed.</p>
-						<p>While we're confident in the security and integrity of the keypairs on Ether Cards, we do not recommend storing large amounts of cryptocurrency on them. Ether Cards are intended to be used for low value gifts and payments, and as an easy way to introduce people to the power of the Ethereum blockchain.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<script>
-	ga('require', 'ec');
-	ga(function(tracker) {
-		$('form [name=custom]').val(tracker.get('clientId'));
-	});
-	$("form input[type=button]").click(function() {
-		var self = $(this).parents('form').first();
-		ga('ec:addProduct', {
-			'id': self.find('[name=item_number]').val(),
-			'name': self.find('[name=item_name]').val(),
-			'price': self.find('[name=amountf]').val(),
-			'quantity': self.find('[name=quantity]').val(),
-		});
-		ga('ec:setAction', 'add');
-		ga('send', 'event', 'UX', 'click', 'buy now', {
-			'hitCallback': function() {
-				self.submit();
-			}
-		});
-		return !window.ga;
-	});
-</script>
-<script type="text/javascript" data-cfasync="false" src="https://app.ecwid.com/script.js?11346531&amp;data_platform=code&amp;data_date=2017-04-02" charset="utf-8"></script>
-<script type="text/javascript">
-	function addProduct(product) {
-	    Ecwid.Cart.addProduct(product);
-	    window.location.hash = '/#!/~/cart';
-	}
-</script>
+      
+          <div class="row mt-5 mb-1">
+            <div class="col-md-8 offset-md-2 text-center">
+              <a href="#order" class="arrow-link"><img src="img/arrow.png" alt=""></a> 
+            </div>
+          </div>
 
 
-	<section class="footer footer-top">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-12">
-					<h3>Ether Cards</h3>
-					<p>Ether Cards is a project of <a href="http://www.akomba.com/">Akomba Labs</a> </p>
-				</div>
-				<div class="col-md-2 col-sm-3 col-xs-6">
-					<h3>Social</h3>
-					<ul class="quick-links">
-						<li><a href="https://twitter.com/ether_cards">Twitter</a></li>
-						<li><a href="mailto:cards@ether.cards">Email</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 col-sm-3 col-xs-6">
-					<h3>More</h3>
-					<ul class="quick-links">
-						<li><a href="https://github.com/ethercards/ethercards.github.io/">Site Source</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer class="footer footer-sub">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-sm-12">
-					<p>&copy; 2018 Akomba Labs Pte Ltd. All Rights Reserved</p>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<p class="copyright">Theme made with <i class="ion-heart"></i> by <a href="http://www.simplesphere.net"> Simplesphere</a></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<a href="#" class="scroll-up"><i class="ion-android-arrow-up"></i></a>
-	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/js/modernizr.min.js" type="text/javascript"></script>
-	<script src="/js/custom.js?at=20170408" type="text/javascript"></script>
-</body>
+        </section>
+
+        <section class="section" id="order">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+              <h1 class="header">Shop &amp; Order</h1>
+              <p class="mt-5">Ether cards are available for purchase now, with free worldwide shipping and a minimum order of just two cards.</p>
+            </div>
+          </div>
+
+          <div class="row" id="cardcontainer">
+            <div class="col-md-10 offset-md-1">
+              <div class="row">
+                  <div class="card-deck mb-5 mt-5">
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/kartya-04.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Ethereum Space</h4>
+                              <p class="card-text">
+                                Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+                              <button class="card-buy-button" onclick="openModal({id: 97486127, name: 'Ethereum Space Design', price: 3.50, image: 'kartya-04.png'})">BUY</button>
+                          </div>
+                      </div>
+
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/kartya-02.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Toucan</h4>
+                              <p class="card-text">Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+                              <button class="card-buy-button" onclick="openModal({id: 82436775, name: 'Toucan Design', price: 3.50, image: 'kartya-02.png'})">BUY</button>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/kartya-06-2.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Lunar New Year Special</h4>
+                              <p class="card-text">
+                                Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+                              <button class="card-buy-button" onclick="openModal({id: 95839254, name: 'CNY Edition', price: 3.50, image: 'kartya-06-2.png'})">BUY</button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="card-deck">
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/kartya-01.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Xmas edition</h4>
+                              <p class="card-text">Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+
+                              <button class="card-buy-button disabled">COMING SOONN</button>
+                              
+                          </div>
+                      </div>
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/snowy_mountains2.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Snowy Mountains</h4>
+                              <p class="card-text">
+                                Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+                              <button class="card-buy-button"  onclick="openModal({id: 96580469, name: 'Seasonal Design', price: 4.50, image: 'snowy_mountains2.png'})">BUY</button>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="img/kartya-03.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h4 class="card-title">Singapore</h4>
+                              <p class="card-text">
+                                Seasonal ether.cards design<br>
+                                Gift sleeve included<br>
+                                Includes postage anywhere in the world<br>
+                                Minimium order 2 pc</p>
+                                <button class="card-buy-button" onclick="openModal({id: 95839242, name: 'Singapore Design', price: 3.50, image: 'kartya-03.png'})">BUY</button>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-8 offset-md-2 text-center">
+                <a href="#custom-cards" class="arrow-link"><img src="img/arrow.png" alt=""></a> 
+            </div>
+          </div>
+
+          <div id="cart-modal" class="cart-modal  h-100" data-productid="ID">
+              <div class="justify-content-center align-self-center col-md-6 offset-md-3 cart-modal-content">
+                <div class="card-deck">
+                  
+                  <div class="card product-display">
+                    <span class="back-arrow" onclick="closeModal()"><img src="img/BACK.png" alt=""></span>
+                    <img id="product-image" class="card-image" src="img/kartya-01.png" alt="">
+                  </div>
+                  <div class="card product-description">
+                    <span  id="close-modal" class="glyphicon glyphicon-remove">X</span>
+        
+                    <h5>ETHER SMART CARD</h5>
+                    <h3 id="product-name">XMAS EDITION</h3>
+                    <h3 id="product-price">US$3.50</h3>
+                    
+                    <p>Min order 2pc., gift sleeve included, includes postage anywhere in the world</p>
+                    <div class="form-group">
+                      <label for="qty">QTY</label>
+                      <div class="spinner">
+                        <input class="form-control" id="qty" name="qty" type="number" min="2" value="2">
+                        <span id="up" class="up">+</span>
+                        <span id="down" class="down">-</span>
+                      </div>
+                    </div>
+                    <div id="error-message" class="alert alert-danger" role="alert">
+                    </div>
+                    
+                    <span id="add-to-cart" class="cart-button" onclick="addToCart()">ADD TO CART</span>
+                    <!-- <span id="checkout" class="cart-button" onclick="checkout()">PURCHASE THIS CARD</span> -->
+                    
+                  </div>
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <section class="section" id="custom-cards">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+                <h1 class="header">Custom cards</h1>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-10 offset-md-1 text-center">
+                  <p>Want to cool way to physically hand out your tokens? Or name cards that no blockchain geek could forget? Custom cards start at a minimum quantity of 250 pieces.</p>
+                  <a href="doc/TEMPLATE.pdf" download="template.pdf"><img class="custom-cards-img mt-4 mb-5" src="img/icon_download-card-template.png" alt="download card template"></a>
+
+                  <h5 class="subhead"><a href="doc/TEMPLATE.pdf" download="template.pdf">Download the card template PDF for custom order here</a></h5>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-8 offset-md-2 text-center">
+                <a href="#card-types" class="arrow-link"><img src="img/arrow.png" alt=""></a> 
+            </div>
+          </div>
+
+        </section>
+
+        <section class="section" id="card-types">
+          
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+              <h1 class="header">Card types</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card-deck mb-5 mt-5">
+                  
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <h4 class="subhead">Classic</h4>
+                          <p class="with-number"><span>1</span> Simple and beginner-friendly single use crypto gift cards.</p>
+                          <img src="img/icon_for-green-section_01.png" alt="">
+                          <div class="button-container">
+                            <a href="#order" class="btn">SHOP</a>
+                          </div>                          
+                      </div>
+                  </div>
+                  
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <h4 class="subhead">Smart</h4>
+                          <p class="with-number"><span>2</span> Cards imbedded with NFC chips, able to function as hardware wallets, collector NFTs, gaming cards, custodial services, and more. </p>
+                          <img src="img/icon_for-green-section_02.png" alt="">
+                          <div class="button-container">
+                            <a class="btn disabled">COMING SOON</a>
+                          </div>                          
+                      </div>
+                  </div>
+
+                </div>
+            </div>
+          </div>
+
+
+          <div class="row  mt-0">
+            <div class="col-md-8 offset-md-2 text-center">
+                <a href="#clients" class="arrow-link"><img src="img/arrow.png" alt=""></a> 
+            </div>
+          </div>
+  
+        </section>
+      
+        <section class="section" id="clients">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+                <h1 class="header">Clients</h1>
+              </div>
+            </div>
+            
+            <div class="row mt-4">
+              <div class="col-md-10 offset-md-1 text-center client-images">
+                  <a href="https://cellarius.network/" target="_blank"><img  src="img/clients/1-1.png" alt="cellarius.network"></a>
+                  <a href="https://gnosis.pm/" target="_blank"><img  src="img/clients/1-2.png" alt="gnosis.pm"></a>
+                  <a href="https://wepower.network" target="_blank"><img  src="img/clients/1-3.png" alt="wepower.network"></a>
+                  <a href="https://aragon.org/" target="_blank"><img  src="img/clients/1-4.png" alt="aragon.org"></a>
+                  <a href="https://mycrypto.com" target="_blank"><img  src="img/clients/2-1.png" alt="mycrypto.com"></a>
+                  <a href="https://www.longhash.com/" target="_blank"><img  src="img/clients/2-2.png" alt="www.longhash.com"></a>
+                  <a href="https://ost.com/" target="_blank"><img  src="img/clients/2-4.png" alt="ost.com"></a>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-8 offset-md-2 text-center">
+                <a href="#contact-us" class="arrow-link"><img src="img/arrow.png" alt=""></a> 
+            </div>
+          </div>
+
+        </section>
+
+        <section class="section" id="contact-us">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+              <h1 class="header">Contact us</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+              <p>Send us an email at <a href="mailto:hello@ethercards.com">hello@ethercards.com</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="footer">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+              <h5 class="text-logo"><img src="img/logo.png" alt="">ETHER.<span>CARDS</span></h5>
+              <div class="mt-5 mb-5">
+                <a  class="scroll-link footer-nav-link" href="#home">Home</a>
+                <a  class="scroll-link footer-nav-link" href="#how-to">How to</a>
+                <a  class="scroll-link footer-nav-link" href="#order">Order</a>
+                <a  class="scroll-link footer-nav-link" href="#custom-cards">Custom cards</a>
+                <a  class="scroll-link footer-nav-link" href="#card-types">Card types</a>
+                <a  class="scroll-link footer-nav-link" href="#clients">Clients</a>
+                <a  class="scroll-link footer-nav-link" href="#contact-us">Contact Us</a>
+                <a  class="footer-nav-link cart" href="#!/~/cart">Shopping cart <span class="cart-item-counter">0</span></a>
+              </div>
+              
+              <div>
+                  <a  class="footer-social-link" target="_blank" id="twitter" href="https://twitter.com/ether_cards"></a>
+                  <a  class="footer-social-link" target="_blank" id="akomba" href="https://akomba.com"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" data-cfasync="false" src="https://app.ecwid.com/script.js?11346531&amp;data_platform=code&amp;data_date=2017-04-02" charset="utf-8"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
