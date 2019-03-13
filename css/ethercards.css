@@ -374,6 +374,8 @@ h1.abs {
     background-size: contain;
     background-repeat: no-repeat;
     transition: all .3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -394,6 +396,14 @@ h1.abs {
 
 #akomba:hover{
     background-image:url('../img/akomba-logo-64-active.png');
+}
+
+#insta{
+    background-image:url('../img/instagram_normal.png');
+}
+
+#insta:hover{
+    background-image:url('../img/instagram_active.png');
 }
 
 
