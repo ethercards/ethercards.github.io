@@ -2,7 +2,7 @@ body {
     color:white;
     background: #222;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 h1,h2,h3,h4,h5 {
@@ -22,6 +22,15 @@ h1 {
     margin-right: auto;
 }
 
+.mt-100 {
+    margin-top: 100px !important;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #0f1027;
+    border-color: #325c86;
+}
 
 /* navigation and branding */
 
@@ -218,13 +227,21 @@ h5.text-logo{
 }
 
 .subhead a, h4 a, p a{
-    color:white;
+    color:#aad;
     transition: color 0.5s ease;
 }
 
+#contact-us p a{
+    color:rgb(68, 68, 82);
+}
+
 .subhead a:hover, h4 a:hover, p a:hover{
-    color:#aad;
+    color:rgb(131, 131, 181);
     text-decoration: none;
+}
+
+#contact-us p a:hover{
+    color:rgb(37, 37, 50);
 }
 
 h1.abs {
@@ -237,7 +254,30 @@ h1.abs {
 
 .ehbox{
     position: relative;
-    padding-bottom: 100px;
+    padding: 35px 5px;
+
+    background: url('../img/card-bg.png');
+    background-position: bottom center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow:  0 0 0 #000;
+    transition: all 0.5s ease;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ehbox * {
+    opacity: 0.8;
+}
+
+.ehbox:hover {
+    box-shadow:  0 0 40px #000;
+    background-color: #0f1027;
+    transform: translateY(-25px);
+}
+
+.ehbox:hover * {
+    opacity: 1.0;
 }
 
 .ehbox .img-container{
@@ -249,15 +289,26 @@ h1.abs {
     text-align: center;
 }
 
-
+.ehbox .subhead{
+    text-align:center;
+}
 
 .img-container img{
     display: inline-block;
     height:100%;
 }
 
+.ehbox ul {
+    list-style: none;
+    padding: 0;
+}
 
-
+.ehbox ul li {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    padding: 0;
+    text-align: center;
+}
 
 #home .row{
     margin-top: 40px;
@@ -419,7 +470,7 @@ h1.abs {
 
 section#home {
     background-image: url('../img/big-image-behind-video.jpg');
-    background-position: bottom center;
+    background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #0d88d5;
