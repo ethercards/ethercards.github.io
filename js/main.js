@@ -33,13 +33,13 @@ $(document).ready(function() {
     }
 
 
-    Ecwid.OnCartChanged.add(function(cart){
+/*     Ecwid.OnCartChanged.add(function(cart){
         $('.cart-item-counter').html(cart.productsQuantity);
-    });
+    }); */
 });
 
 
-
+/* 
 
 function openModal(product){
 
@@ -113,7 +113,7 @@ function addToCart(){
     Ecwid.Cart.addProduct(product);
 }
 
-
+ */
 
 
 
